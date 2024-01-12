@@ -17,4 +17,7 @@ sudo bash squid3-install.sh 2>&1 | log
 log "Creating htpasswd file..."
 sudo /usr/bin/htpasswd -b -c /etc/squid/passwd proxify fcJJT2TrTnkvUZvF 2>&1 | log
 
+log "Reloading Squid configuration..."
+sudo systemctl reload squid
+
 echo "Script execution completed."
