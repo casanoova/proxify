@@ -9,7 +9,7 @@ sudo rm /var/lib/dpkg/lock-frontend 2>&1 | log
 sudo rm /var/lib/dpkg/lock 2>&1 | log
 
 log "Downloading squid3 installation script..."
-wget https://raw.githubusercontent.com/serverok/squid-proxy-installer/master/squid3-install.sh -O squid3-install.sh 2>&1 | log
+wget_output=$(wget https://raw.githubusercontent.com/serverok/squid-proxy-installer/master/squid3-install.sh -O squid3-install.sh 2>&1)
 
 log "Running squid3 installation script..."
 sudo bash squid3-install.sh 2>&1 | log
